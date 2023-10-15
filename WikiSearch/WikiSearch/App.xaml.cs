@@ -15,8 +15,11 @@ namespace WikiSearch
             InitializeComponent();
 
             //MainPage = new MainPage();
+            var appContainer = new AppContainer();
+
+
             MainPage = new NavigationPage(new WikiListPage());
-            DependencyService.Register<IWikiService , WikiService>();
+            //DependencyService.Register<IWikiService , WikiService>();
         }
 
         protected override void OnStart()

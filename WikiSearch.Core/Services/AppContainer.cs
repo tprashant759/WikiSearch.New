@@ -13,7 +13,7 @@ namespace WikiSearch.Core.Services
         {
             // services
             var builder = new ContainerBuilder();
-            builder.RegisterType<IWikiService>().As<WikiService>().SingleInstance();
+            builder.RegisterType<WikiService>().As<IWikiService>().SingleInstance();
 
             // view models
             builder.RegisterType<WikiListViewModel>().SingleInstance();
