@@ -1,7 +1,6 @@
 ﻿using System;
 using Autofac;
 using WikiSearch.API;
-using WikiSearch.Core.Services;
 using WikiSearch.ViewModels;
 
 namespace WikiSearch.Services

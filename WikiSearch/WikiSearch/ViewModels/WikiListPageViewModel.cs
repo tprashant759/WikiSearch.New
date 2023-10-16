@@ -26,7 +26,7 @@ namespace WikiSearch.ViewModels
             set
             {
                 _searchText = value;
-                RefreshSearchEntries();
+                RefreshSearchEntries();;
             }
         }
 
@@ -80,16 +80,22 @@ namespace WikiSearch.ViewModels
         /// <returns></returns>
         private async Task RefreshSearchEntries()
         {
-            var result = await WikiService.GetWikiEntriesList(_searchText);
-            if (result != null)
+            try
             {
-                var entryList = new ObservableCollection<WikiEntries>(result);
-                WikiEntries = new ObservableCollection<Search>(entryList.FirstOrDefault().query.search);
-
-                foreach(var item in WikiEntries)
+                var result = await WikiService.GetWikiEntriesList(_searchText);
+                if (result != null)
                 {
-                    item.snippet = StripHTML(item.snippet);
+                    var entryList = result;
+                    WikiEntries = new ObservableCollection<Search>(entryList.query.search);
+                    foreach (var item in WikiEntries)
+                    {
+                        item.snippet = StripHTML(item.snippet);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
 

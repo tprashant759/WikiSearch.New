@@ -21,14 +21,14 @@ namespace WikiSearch.API
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public async Task<List<WikiEntries>> GetWikiEntriesList(string searchText)
+        public async Task<WikiEntries> GetWikiEntriesList(string searchText)
         {
-            List<WikiEntries> wikiList = null;
+            WikiEntries wikiList = null;
             HttpResponseMessage response = await client.GetAsync(string.Format(Constants.WikiAPI,searchText));
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                wikiList =new List<WikiEntries> { JsonConvert.DeserializeObject<WikiEntries>(content) };
+                wikiList = JsonConvert.DeserializeObject<WikiEntries>(content);
             }
 
             return wikiList;

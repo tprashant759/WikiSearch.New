@@ -14,6 +14,6 @@ namespace WikiSearch.API
         /// </summary>
         /// <param name="searchText"></param>
         /// <returns></returns>
-        Task<List<WikiEntries>> GetWikiEntriesList(string searchText);
+        Task<WikiEntries> GetWikiEntriesList(string searchText);
     }
 }

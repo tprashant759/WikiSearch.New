@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WikiSearch.Core.Services;
 using WikiSearch.Services;
 
 namespace WikiSearch.ViewModels

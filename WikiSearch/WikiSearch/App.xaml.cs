@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Autofac;
 using WikiSearch.API;
-using WikiSearch.Core.Services;
 using WikiSearch.Services;
 using WikiSearch.Views;
 using Xamarin.Forms;

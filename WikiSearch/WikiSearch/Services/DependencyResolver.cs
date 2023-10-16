@@ -1,7 +1,7 @@
 ﻿using System;
 using Autofac;
 
-namespace WikiSearch.Core.Services
+namespace WikiSearch.Services
 {
     /// <summary>
     /// Builds the container and resolves dependency through interface
