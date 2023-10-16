@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Autofac;
 using WikiSearch.API;
+using WikiSearch.Core.Services;
+using WikiSearch.Services;
 using WikiSearch.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,16 +14,13 @@ namespace WikiSearch
 {
     public partial class App : Application
     {
-        public App()
+        public DependencyResolver DependencyResolver { get; }
+
+        public App(Module platformIocModule)
         {
             InitializeComponent();
-
-            //MainPage = new MainPage();
-            var appContainer = new AppContainer();
-
-
+            DependencyResolver = new DependencyResolver(platformIocModule, new IocModule());
             MainPage = new NavigationPage(new WikiListPage());
-            //DependencyService.Register<IWikiService , WikiService>();
         }
 
         protected override void OnStart()

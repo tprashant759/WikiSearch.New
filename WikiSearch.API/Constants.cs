@@ -2,6 +2,6 @@ namespace WikiSearch.API
 {
     public static class Constants
     {
-        public static string WikiListGet = "https://en.wikipedia.org/api/rest_v1/#/";
+        public static string WikiAPI = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={0}&utf8=&format=json";
     }
 }

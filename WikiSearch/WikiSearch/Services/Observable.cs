@@ -1,13 +1,17 @@
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WikiSearch.Core.Services
+namespace WikiSearch.Services
 {
+    /// <summary>
+    /// Property changed event 
+    /// </summary>
     public class Observable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => 
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

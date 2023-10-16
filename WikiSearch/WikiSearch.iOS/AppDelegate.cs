@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using UIKit;
+using WikiSearch.Services;
 
 namespace WikiSearch.iOS
 {
@@ -22,7 +23,7 @@ namespace WikiSearch.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(new IocModule()));
 
             return base.FinishedLaunching(app, options);
         }

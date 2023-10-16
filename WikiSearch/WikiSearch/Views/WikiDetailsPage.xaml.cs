@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WikiSearch.Core.ViewModels;
+using WikiSearch.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,8 +14,8 @@ namespace WikiSearch.Views
     {
         public WikiDetailsPage()
         {
+
             InitializeComponent();
-            this.BindingContext = new WikiDetailsViewModel(string.Empty);
         }
     }
 }

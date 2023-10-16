@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WikiSearch.API;
-using WikiSearch.Core.ViewModels;
+using WikiSearch.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +16,6 @@ namespace WikiSearch.Views
         public WikiListPage()
         {
             InitializeComponent();
-            this.BindingContext = new WikiListViewModel(DependencyService.Get<IWikiService>());
         }
     }
 }

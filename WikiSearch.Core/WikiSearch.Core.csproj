@@ -15,4 +15,10 @@
         <ReferenceSourceTarget></ReferenceSourceTarget>
       </ProjectReference>
     </ItemGroup>
+    <ItemGroup>
+      <None Remove="ViewModels\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="ViewModels\" />
+    </ItemGroup>
 </Project>

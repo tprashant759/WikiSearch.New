@@ -17,4 +17,12 @@
     <ItemGroup>
       <ProjectReference Include="..\..\WikiSearch.Core\WikiSearch.Core.csproj" />
     </ItemGroup>
+    <ItemGroup>
+      <None Remove="Services\" />
+      <None Remove="ViewModels\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Services\" />
+      <Folder Include="ViewModels\" />
+    </ItemGroup>
 </Project>

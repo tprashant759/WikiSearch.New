@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using WikiSearch.Services;
 
 namespace WikiSearch.Droid
 {
@@ -19,7 +20,7 @@ namespace WikiSearch.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(new App(new IocModule()));
         }
     }
 }
