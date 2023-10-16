@@ -14,7 +14,6 @@ namespace WikiSearch.Views
     {
         public WikiDetailsPage()
         {
-
             InitializeComponent();
         }
     }

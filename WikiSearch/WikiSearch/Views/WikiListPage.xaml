@@ -8,22 +8,28 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand"
+        <Grid HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <SearchBar Text="{Binding SearchText}" 
+            <SearchBar Grid.Row="0"
+                       Text="{Binding SearchText}" 
                        HorizontalOptions="FillAndExpand"
                        VerticalOptions="StartAndExpand"/>
 
-            <ListView ItemsSource="{Binding WikiEntries}"
+            <ListView Grid.Row="1"
+                      ItemsSource="{Binding WikiEntries}"
                       x:Name="listView"
                       HorizontalOptions="FillAndExpand"
-                      VerticalOptions="StartAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      CachingStrategy="RecycleElement"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-
                             <StackLayout  Margin="10" Padding="10" Spacing="5">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.WikiItemPressedCommand, Source={x:Reference listView}}" CommandParameter="{Binding .}"/>
@@ -42,6 +48,6 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
